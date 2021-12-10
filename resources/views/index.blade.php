@@ -117,7 +117,7 @@
         <form action='/todo/create' method="post" class ="todo-search">
             @csrf
             <div class="form-group">
-                <input type="text" name="body" class="form-control" placeholder="todo list" style="max-width:1000px;">
+                 <input type="text" name="body" class="form-control" placeholder="todo list" style="max-width:1000px;">
             </div>
             <button type="submit" class="btn-add">追加</button>
         </form>
@@ -125,7 +125,7 @@
         
 
         <table class="table1" style="max-width:700px; margin-top:50px;">
-
+         
           <tr>
             <th>作成日</th>
             <th>タスク名</th>
@@ -138,15 +138,19 @@
                 <td>{{ $todo->created_at }}</td>
                 <td>{{ $todo->id }}</td>
                 <td>
-                    <form action="{{ route('todo.update', ['id' => $todo->id]) }}" method="post">
+                
+                    <form action="{{ route('todo.update', ['id' => $todo->id]) }}" method="post" >
                     @csrf
                      <td>
-                    <input type="text" value="{{ $todo->body }}" name="body" />
+                    
+               <input type="text" value="{{ $todo->body }}" name="body" />
                         <button type="submit" class="btn-update">更新</button>
+                       
                     </form>
                 </td>
                 <td>
                     <form action="{{ route('todo.delete', ['id' => $todo->id]) }}" method="post">
+                      
                      @csrf
                         <button type="submit" class="btn-delete">削除</button>
                     </form>

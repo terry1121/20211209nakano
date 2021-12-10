@@ -9,7 +9,7 @@ class TodosController extends Controller
 {
     //追加
 
-    public function index(Request $request) {
+  public function index(Request $request) {
       $todos = Todo::all();
       return view('index',["todos"=>$todos]);
     }
